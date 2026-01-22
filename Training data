@@ -1,0 +1,52 @@
+import pandas as pd
+import numpy as np
+import re
+import joblib
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics import classification_report, accuracy_score, confusion_matrix
+from scipy.sparse import hstack  # Ensure consistent vector stacking
+
+# Load dataset
+df = pd.read_csv(r"C:\Users\vamsi\Downloads\ecommerce_sellers_final.csv")
+
+# Clean text function
+def clean_text(text):
+    text = str(text).lower()
+    text = re.sub(r'[^a-z\s]', '', text)
+    text = re.sub(r'\s+', ' ', text).strip()
+    return text
+
+# Apply cleaning
+df['cleaned_review'] = df['review_text'].apply(clean_text)
+
+# Encode categorical column
+encoder = LabelEncoder()
+df['encoded_category'] = encoder.fit_transform(df['product_category'])
+
+# Vectorize text
+vectorizer = TfidfVectorizer(max_features=1000)
+X_text = vectorizer.fit_transform(df['cleaned_review'])
+
+# Combine features
+X_num = df[['seller_rating', 'total_sales', 'encoded_category']].values
+X = hstack([X_num, X_text])
+y = df['label']
+
+# Split & train
+X_train, X_test, y_train, y_test = train_test_split(X, y, stratify=y, test_size=0.2, random_state=42)
+model = RandomForestClassifier(n_estimators=100, random_state=42)
+model.fit(X_train, y_train)
+
+# Evaluate
+y_pred = model.predict(X_test)
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print("Classification Report:\n", classification_report(y_test, y_pred))
+print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
+
+# Save model & tools
+joblib.dump(model, "trained_fraud_model.pkl")
+joblib.dump(encoder, "category_encoder.pkl")
+joblib.dump(vectorizer, "review_vectorizer.pkl")
