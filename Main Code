@@ -1,0 +1,229 @@
+import pandas as pd
+import numpy as np
+import joblib
+import os
+import re
+import tkinter as tk
+from tkinter import messagebox, filedialog, ttk
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import matplotlib.pyplot as plt
+from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
+
+# --- Helper functions ---
+
+def clean_text(text):
+    text = text.lower()
+    text = re.sub(r'[^a-z\s]', '', text)
+    text = re.sub(r'\s+', ' ', text).strip()
+    return text
+
+def safe_load(path, name):
+    if not os.path.exists(path):
+        messagebox.showwarning("Warning", f"{name} file '{path}' not found. Skipping.")
+        return None
+    try:
+        return joblib.load(path)
+    except Exception as e:
+        messagebox.showerror("Error", f"Failed to load {name}: {e}")
+        return None
+
+# --- Load Dataset ---
+csv_path = filedialog.askopenfilename(title="Select Dataset CSV File", filetypes=[("CSV Files", "*.csv")])
+if not csv_path or not os.path.exists(csv_path):
+    messagebox.showerror("Error", "Valid dataset file not selected.")
+    exit()
+
+df = pd.read_csv(csv_path)
+if "label" not in df.columns or "product_category" not in df.columns:
+    messagebox.showerror("Error", "Dataset missing required columns.")
+    exit()
+
+# --- Load Models ---
+model_path = filedialog.askopenfilename(title="Select Trained Model", filetypes=[("Pickle files", "*.pkl")])
+if not model_path or not os.path.exists(model_path):
+    messagebox.showerror("Error", "Valid model file not selected.")
+    exit()
+
+model = safe_load(model_path, "Fraud Detection Model")
+encoder = safe_load("category_encoder.pkl", "Category Encoder")
+vectorizer = safe_load("review_vectorizer.pkl", "Text Vectorizer")
+
+# --- GUI Setup ---
+root = tk.Tk()
+root.title("E-Commerce Fraud Dashboard")
+root.geometry("1000x750")
+
+output_frame = tk.Frame(root)
+output_frame.pack(fill="both", expand=True)
+
+def clear_canvas():
+    for widget in output_frame.winfo_children():
+        if isinstance(widget, FigureCanvasTkAgg):
+            widget.get_tk_widget().destroy()
+
+def show_scrollable_popup(title, content):
+    popup = tk.Toplevel(root)
+    popup.title(title)
+    popup.geometry("400x400")
+    text = tk.Text(popup, wrap="none")
+    text.insert(tk.END, content)
+    text.pack(side="left", fill="both", expand=True)
+    yscroll = tk.Scrollbar(popup, orient="vertical", command=text.yview)
+    yscroll.pack(side="right", fill="y")
+    text.configure(yscrollcommand=yscroll.set)
+
+def show_seller_distribution():
+    clear_canvas()
+    fraud_count = df['label'].value_counts()
+    fig, ax = plt.subplots(figsize=(6, 6))
+    ax.pie(fraud_count, labels=["Genuine", "Fraudulent"], autopct='%1.1f%%', startangle=90)
+    ax.set_title("Seller Type Distribution")
+    canvas = FigureCanvasTkAgg(fig, master=output_frame)
+    canvas.get_tk_widget().pack()
+    canvas.draw()
+
+def show_fraud_rate():
+    clear_canvas()
+    category_fraud = df.groupby("product_category")["label"].mean().sort_values(ascending=False)
+    fig, ax = plt.subplots(figsize=(10, 5))
+    category_fraud.plot(kind='bar', ax=ax, title="Fraud Rate by Product Category")
+    ax.set_ylabel("Fraud Rate")
+    canvas = FigureCanvasTkAgg(fig, master=output_frame)
+    canvas.get_tk_widget().pack()
+    canvas.draw()
+
+def display_genuine_sellers():
+    genuine_df = df[df['label'] == 0][['seller_id', 'seller_rating', 'total_sales', 'product_category', 'review_text']]
+    show_scrollable_popup("Genuine Sellers", genuine_df.to_string(index=False))
+
+def display_fraudulent_sellers():
+    fraud_df = df[df['label'] == 1][['seller_id', 'seller_rating', 'total_sales', 'product_category', 'review_text']]
+    show_scrollable_popup("Fraudulent Sellers", fraud_df.to_string(index=False))
+
+def export_fraudulent_sellers():
+    fraud_df = df[df['label'] == 1]
+    save_path = filedialog.asksaveasfilename(defaultextension=".csv", initialfile="fraudulent_sellers_report.csv", filetypes=[("CSV Files", "*.csv")])
+    if save_path:
+        fraud_df.to_csv(save_path, index=False)
+        messagebox.showinfo("Success", f"Fraudulent sellers exported to {save_path}")
+
+def show_summary():
+    total = len(df)
+    frauds = df['label'].sum()
+    genuine = total - frauds
+    fraud_rate = (frauds / total) * 100
+    top_category = df[df['label'] == 1]['product_category'].mode()[0]
+    summary = (
+        f"📦 Total Sellers: {total}\n"
+        f"✅ Genuine Sellers: {genuine}\n"
+        f"⚠️ Fraudulent Sellers: {frauds} ({fraud_rate:.2f}%)\n"
+        f"🔥 Most Fraud-Prone Category: {top_category}"
+    )
+    messagebox.showinfo("Dataset Summary", summary)
+
+def predict_seller_fraud():
+    if model is None:
+        messagebox.showerror("Error", "No model loaded.")
+        return
+    popup = tk.Toplevel(root)
+    popup.title("Predict Seller Fraud")
+    popup.geometry("300x300")
+    seller_ids = df['seller_id'].unique().tolist()
+    selected_id = tk.StringVar()
+    ttk.Label(popup, text="Select Seller ID:").pack(pady=10)
+    ttk.Combobox(popup, textvariable=selected_id, values=seller_ids).pack()
+    def run_prediction():
+        sid = selected_id.get()
+        row = df[df['seller_id'] == sid]
+        if row.empty:
+            messagebox.showerror("Error", "Seller ID not found.")
+            return
+        try:
+            features = pd.DataFrame()
+            features['seller_rating'] = row['seller_rating']
+            features['total_sales'] = row['total_sales']
+            if encoder:
+                features['product_category'] = encoder.transform(row['product_category'])
+            else:
+                features['product_category'] = row['product_category'].astype('category').cat.codes
+            if vectorizer:
+                review_vec = vectorizer.transform([clean_text(row.iloc[0]['review_text'])])
+                full_features = np.hstack([features.values, review_vec.toarray()])
+            else:
+                full_features = features.values
+            pred = model.predict(full_features)[0]
+            prob = model.predict_proba(full_features)[0][int(pred)]
+            label = "Fraudulent 🚨" if pred == 1 else "Genuine ✅"
+            messagebox.showinfo("Prediction Result", f"Prediction: {label}\nConfidence: {prob:.2f}")
+        except Exception as e:
+            messagebox.showerror("Prediction Error", str(e))
+    ttk.Button(popup, text="Predict", command=run_prediction).pack(pady=20)
+
+def show_model_evaluation():
+    if model is None:
+        messagebox.showerror("Error", "Model not loaded.")
+        return
+
+    try:
+        df_eval = df.copy()
+        df_eval['review_text'] = df_eval.get('review_text', "").fillna("")
+
+        # Numeric features
+        X = pd.DataFrame()
+        X['seller_rating'] = df_eval['seller_rating']
+        X['total_sales'] = df_eval['total_sales']
+
+        # Encode product category safely
+        def safe_encode(cat):
+            return encoder.transform([cat])[0] if encoder and cat in encoder.classes_ else -1
+
+        if encoder:
+            X['product_category'] = df_eval['product_category'].apply(safe_encode)
+        else:
+            X['product_category'] = df_eval['product_category'].astype('category').cat.codes
+
+        # Vectorize review text
+        if vectorizer:
+            review_vectors = vectorizer.transform(df_eval['review_text'].apply(clean_text))
+            features = np.hstack([X.values, review_vectors.toarray()])
+        else:
+            features = X.values
+
+        # Predictions and metrics
+        y_true = df_eval['label']
+        y_pred = model.predict(features)
+
+        acc = accuracy_score(y_true, y_pred)
+        report = classification_report(y_true, y_pred)
+        cmatrix = confusion_matrix(y_true, y_pred)
+
+        result = (
+            f"🎯 Accuracy: {acc:.2f}\n\n"
+            f"📋 Classification Report:\n{report}\n"
+            f"🧮 Confusion Matrix:\n{cmatrix}"
+        )
+
+        show_scrollable_popup("Model Evaluation Report", result)
+
+    except Exception as e:
+        messagebox.showerror("Evaluation Error", str(e))
+
+
+
+# --- Layout ---
+ttk.Label(root, text="E-Commerce Fraud Detection Dashboard", font=("Arial", 18)).pack(pady=10)
+btn_frame = ttk.Frame(root)
+btn_frame.pack(pady=5)
+
+ttk.Button(btn_frame, text="📊 Seller Type Distribution", command=show_seller_distribution).grid(row=0, column=0, padx=5, pady=5)
+ttk.Button(btn_frame, text="📉 Fraud Rate by Category", command=show_fraud_rate).grid(row=0, column=1, padx=5, pady=5)
+ttk.Button(btn_frame, text="✅ Genuine Sellers", command=display_genuine_sellers).grid(row=1, column=0, padx=5, pady=5)
+ttk.Button(btn_frame, text="⚠️ Fraudulent Sellers", command=display_fraudulent_sellers).grid(row=1, column=1, padx=5, pady=5)
+ttk.Button(btn_frame, text="📁 Export Fraud Report", command=export_fraudulent_sellers).grid(row=2, column=0, padx=5, pady=5)
+ttk.Button(btn_frame, text="📈 Summary Stats", command=show_summary).grid(row=2, column=1, padx=5, pady=5)
+ttk.Button(btn_frame, text="🤖 Predict Seller Fraud", command=predict_seller_fraud).grid(row=3, column=0, padx=5, pady=5)
+ttk.Button(btn_frame, text="📋 Model Evaluation", command=show_model_evaluation).grid(row=3, column=1, padx=5, pady=5)
+ttk.Button(btn_frame, text="👋 Exit", command=root.quit).grid(row=4, column=0, columnspan=2, pady=10)
+
+# --- Run App ---
+root.mainloop()
