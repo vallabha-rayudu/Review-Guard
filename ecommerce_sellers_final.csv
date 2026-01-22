@@ -1,0 +1,151 @@
+seller_id,review_text,seller_rating,total_sales,label,product_category,return_rate,response_time,review_timestamp,positive_review_percent,negative_review_percent
+S1000,Terrible quality and no refund given.,1.6,75,1,Beauty,0.44,40,2024-09-05 08:57:47.357472,0.55,0.45
+S1001,Received broken item. No response from seller.,2.4,173,1,Books,0.29,48,2023-06-15 08:57:47.357472,0.49,0.51
+S1002,Excellent service and genuine item.,4.4,2257,0,Books,0.05,1,2024-11-14 08:57:47.357472,0.91,0.09
+S1003,Excellent service and genuine item.,4.9,1313,0,Automotive,0.08,3,2023-12-03 08:57:47.357472,0.98,0.02
+S1004,Smooth transaction and quick shipping.,4.1,1304,0,Beauty,0.03,8,2025-04-07 08:57:47.357472,0.87,0.13
+S1005,Product matches description. Very satisfied.,4.9,1628,0,Fashion,0.04,10,2023-08-30 08:57:47.357472,0.97,0.03
+S1006,Product matches description. Very satisfied.,4.8,1837,0,Books,0.08,6,2024-12-07 08:57:47.357472,1.0,0.0
+S1007,Good price and excellent quality.,4.2,4128,0,Home & Kitchen,0.05,6,2023-11-06 08:57:47.357472,0.95,0.05
+S1008,Product matches description. Very satisfied.,4.6,1322,0,Fashion,0.02,8,2023-07-16 08:57:47.357472,0.87,0.13
+S1009,"Cheap product, not worth the money.",2.3,96,1,Beauty,0.42,40,2024-04-10 08:57:47.357472,0.51,0.49
+S1010,Good price and excellent quality.,4.5,3076,0,Electronics,0.1,11,2024-09-05 08:57:47.357472,0.86,0.14
+S1011,Received broken item. No response from seller.,1.9,81,1,Electronics,0.44,59,2024-11-04 08:57:47.357472,0.31,0.69
+S1012,Product arrived in perfect condition.,4.3,3588,0,Toys,0.09,8,2023-07-26 08:57:47.357472,0.88,0.12
+S1013,Very professional and trustworthy.,4.8,4657,0,Books,0.1,6,2024-06-24 08:57:47.357472,0.88,0.12
+S1014,Product matches description. Very satisfied.,4.4,4287,0,Electronics,0.01,6,2024-06-05 08:57:47.357472,0.92,0.08
+S1015,Good price and excellent quality.,4.9,2173,0,Sports,0.04,2,2025-01-11 08:57:47.357472,0.98,0.02
+S1016,Great product and fast delivery.,4.9,2075,0,Books,0.1,12,2024-04-02 08:57:47.357472,0.99,0.01
+S1017,Product arrived in perfect condition.,4.1,3874,0,Sports,0.05,8,2024-07-18 08:57:47.357472,0.96,0.04
+S1018,Fake product! Do not buy.,1.7,83,1,Electronics,0.49,64,2024-01-04 08:57:47.357472,0.55,0.45
+S1019,Product arrived in perfect condition.,4.4,1949,0,Home & Kitchen,0.05,8,2023-07-09 08:57:47.357472,0.86,0.14
+S1020,Reliable seller. Will buy again.,4.2,2343,0,Sports,0.01,8,2024-12-31 08:57:47.357472,0.99,0.01
+S1021,Good price and excellent quality.,4.8,2092,0,Home & Kitchen,0.04,1,2024-06-28 08:57:47.357472,0.97,0.03
+S1022,Excellent service and genuine item.,4.2,4772,0,Automotive,0.02,2,2023-08-09 08:57:47.357472,1.0,0.0
+S1023,Fake product! Do not buy.,1.4,64,1,Books,0.45,45,2025-02-10 08:57:47.357472,0.52,0.48
+S1024,Good price and excellent quality.,4.5,3001,0,Automotive,0.1,12,2025-01-15 08:57:47.357472,0.98,0.02
+S1025,Very professional and trustworthy.,4.3,2104,0,Electronics,0.09,10,2024-06-21 08:57:47.357472,0.98,0.02
+S1026,Late delivery and poor packaging.,1.0,150,1,Beauty,0.26,61,2024-05-21 08:57:47.357472,0.48,0.52
+S1027,Product arrived in perfect condition.,4.2,1242,0,Books,0.1,6,2024-01-28 08:57:47.357472,0.93,0.07
+S1028,Great product and fast delivery.,4.7,3280,0,Sports,0.03,12,2024-08-31 08:57:47.357472,0.86,0.14
+S1029,"Cheap product, not worth the money.",2.5,185,1,Beauty,0.23,45,2023-06-30 08:57:47.357472,0.48,0.52
+S1030,Very bad experience. Stay away!,1.5,70,1,Beauty,0.49,48,2025-05-29 08:57:47.357472,0.47,0.53
+S1031,Misleading description. Waste of money.,1.5,90,1,Toys,0.32,57,2025-05-26 08:57:47.357472,0.32,0.68
+S1032,Product matches description. Very satisfied.,5.0,3312,0,Electronics,0.08,11,2023-09-22 08:57:47.357472,0.96,0.04
+S1033,Superb service and quality product.,4.2,2279,0,Books,0.06,5,2023-08-31 08:57:47.357472,0.91,0.09
+S1034,Product arrived in perfect condition.,4.5,3556,0,Beauty,0.08,1,2023-12-27 08:57:47.357472,0.97,0.03
+S1035,Late delivery and poor packaging.,2.3,78,1,Electronics,0.25,53,2024-11-03 08:57:47.357472,0.55,0.45
+S1036,Product matches description. Very satisfied.,4.2,3849,0,Home & Kitchen,0.07,12,2024-02-17 08:57:47.357472,0.88,0.12
+S1037,"Cheap product, not worth the money.",2.0,187,1,Toys,0.4,44,2024-03-11 08:57:47.357472,0.38,0.62
+S1038,Good price and excellent quality.,4.6,3285,0,Home & Kitchen,0.09,12,2023-10-30 08:57:47.357472,0.94,0.06
+S1039,Product arrived in perfect condition.,4.5,3368,0,Fashion,0.09,8,2023-08-19 08:57:47.357472,0.86,0.14
+S1040,Product arrived in perfect condition.,4.4,1556,0,Toys,0.07,9,2025-02-15 08:57:47.357472,0.86,0.14
+S1041,Smooth transaction and quick shipping.,4.8,3088,0,Home & Kitchen,0.02,9,2023-10-28 08:57:47.357472,0.98,0.02
+S1042,Product arrived in perfect condition.,4.9,2948,0,Sports,0.06,3,2023-08-16 08:57:47.357472,0.9,0.1
+S1043,Good price and excellent quality.,4.2,3114,0,Home & Kitchen,0.03,7,2024-02-19 08:57:47.357472,0.98,0.02
+S1044,Terrible quality and no refund given.,2.1,69,1,Beauty,0.22,66,2023-08-24 08:57:47.357472,0.54,0.46
+S1045,Reliable seller. Will buy again.,4.6,1570,0,Electronics,0.06,5,2023-07-26 08:57:47.357472,0.92,0.08
+S1046,Reliable seller. Will buy again.,4.3,1820,0,Automotive,0.01,8,2025-01-06 08:57:47.357472,0.99,0.01
+S1047,Smooth transaction and quick shipping.,4.8,1894,0,Automotive,0.05,8,2025-02-28 08:57:47.357472,0.9,0.1
+S1048,Superb service and quality product.,4.7,4720,0,Home & Kitchen,0.09,9,2025-01-03 08:57:47.357472,0.95,0.05
+S1049,Great product and fast delivery.,4.8,1161,0,Sports,0.1,6,2024-08-29 08:57:47.357472,0.98,0.02
+S1050,Seller is unresponsive and rude.,2.1,90,1,Sports,0.26,44,2023-12-30 08:57:47.357472,0.47,0.53
+S1051,Excellent service and genuine item.,4.6,1180,0,Home & Kitchen,0.07,2,2024-02-18 08:57:47.357472,0.97,0.03
+S1052,Reliable seller. Will buy again.,4.3,4509,0,Fashion,0.02,1,2024-12-07 08:57:47.357472,0.87,0.13
+S1053,Product matches description. Very satisfied.,4.3,1224,0,Fashion,0.03,7,2025-04-01 08:57:47.357472,0.94,0.06
+S1054,Great product and fast delivery.,4.3,4882,0,Beauty,0.05,5,2024-01-08 08:57:47.357472,0.89,0.11
+S1055,Reliable seller. Will buy again.,4.0,3949,0,Sports,0.02,6,2025-05-31 08:57:47.357472,0.89,0.11
+S1056,Reliable seller. Will buy again.,4.9,3463,0,Fashion,0.09,11,2024-01-09 08:57:47.357472,0.88,0.12
+S1057,Fake product! Do not buy.,1.2,179,1,Toys,0.29,38,2024-10-05 08:57:47.357472,0.53,0.47
+S1058,Product is different from the listing.,2.1,194,1,Fashion,0.47,63,2024-03-03 08:57:47.357472,0.53,0.47
+S1059,Superb service and quality product.,4.8,2992,0,Electronics,0.07,6,2023-12-20 08:57:47.357472,0.97,0.03
+S1060,Misleading description. Waste of money.,1.2,35,1,Fashion,0.37,62,2024-05-30 08:57:47.357472,0.43,0.57
+S1061,Excellent service and genuine item.,4.7,4650,0,Electronics,0.04,2,2025-05-06 08:57:47.357472,0.86,0.14
+S1062,Late delivery and poor packaging.,1.8,21,1,Beauty,0.26,29,2024-06-16 08:57:47.357472,0.42,0.58
+S1063,Great product and fast delivery.,4.6,3272,0,Automotive,0.06,4,2024-04-19 08:57:47.357472,0.88,0.12
+S1064,Product matches description. Very satisfied.,4.0,4984,0,Electronics,0.02,3,2023-08-06 08:57:47.357472,0.93,0.07
+S1065,Great product and fast delivery.,4.3,2352,0,Beauty,0.04,7,2024-12-25 08:57:47.357472,0.95,0.05
+S1066,Highly recommended seller!,4.5,3086,0,Electronics,0.08,9,2023-08-11 08:57:47.357472,0.93,0.07
+S1067,Highly recommended seller!,4.6,4019,0,Beauty,0.03,4,2023-07-18 08:57:47.357472,0.85,0.15
+S1068,Good price and excellent quality.,4.7,4286,0,Sports,0.08,5,2024-02-11 08:57:47.357472,0.91,0.09
+S1069,Great product and fast delivery.,4.3,4804,0,Books,0.07,8,2023-07-20 08:57:47.357472,0.94,0.06
+S1070,Highly recommended seller!,4.8,2705,0,Automotive,0.03,1,2024-10-19 08:57:47.357472,0.93,0.07
+S1071,Reliable seller. Will buy again.,4.9,1250,0,Home & Kitchen,0.05,3,2023-10-20 08:57:47.357472,0.93,0.07
+S1072,Highly recommended seller!,4.7,4667,0,Automotive,0.09,2,2024-12-25 08:57:47.357472,1.0,0.0
+S1073,Great product and fast delivery.,4.4,2735,0,Home & Kitchen,0.08,10,2024-07-23 08:57:47.357472,0.86,0.14
+S1074,Product matches description. Very satisfied.,4.5,4087,0,Books,0.08,11,2023-11-24 08:57:47.357472,0.91,0.09
+S1075,Good price and excellent quality.,4.2,1030,0,Automotive,0.08,12,2023-09-26 08:57:47.357472,0.97,0.03
+S1076,Fake product! Do not buy.,1.1,23,1,Fashion,0.38,69,2025-05-29 08:57:47.357472,0.44,0.56
+S1077,Great product and fast delivery.,4.8,2472,0,Sports,0.06,11,2023-12-31 08:57:47.357472,0.87,0.13
+S1078,Product arrived in perfect condition.,4.8,3278,0,Home & Kitchen,0.01,11,2024-03-10 08:57:47.357472,0.98,0.02
+S1079,Smooth transaction and quick shipping.,4.0,4554,0,Electronics,0.08,7,2025-01-05 08:57:47.357472,0.97,0.03
+S1080,Product matches description. Very satisfied.,4.6,3256,0,Electronics,0.02,4,2024-07-25 08:57:47.357472,0.98,0.02
+S1081,Smooth transaction and quick shipping.,4.2,4527,0,Sports,0.09,7,2024-06-03 08:57:47.357472,0.95,0.05
+S1082,Misleading description. Waste of money.,1.8,68,1,Fashion,0.2,29,2023-11-01 08:57:47.357472,0.35,0.65
+S1083,Fake product! Do not buy.,2.5,71,1,Toys,0.5,34,2025-05-17 08:57:47.357472,0.45,0.55
+S1084,Very professional and trustworthy.,4.1,3069,0,Toys,0.06,12,2024-01-06 08:57:47.357472,0.91,0.09
+S1085,Product matches description. Very satisfied.,5.0,2026,0,Electronics,0.09,11,2024-09-04 08:57:47.357472,0.89,0.11
+S1086,Product arrived in perfect condition.,4.6,4699,0,Beauty,0.07,6,2024-06-19 08:57:47.357472,0.92,0.08
+S1087,Good price and excellent quality.,4.9,2052,0,Beauty,0.08,1,2023-08-06 08:57:47.357472,1.0,0.0
+S1088,Great product and fast delivery.,4.9,2840,0,Electronics,0.08,11,2023-07-02 08:57:47.357472,1.0,0.0
+S1089,Good price and excellent quality.,4.1,4503,0,Books,0.09,8,2025-02-15 08:57:47.357472,0.95,0.05
+S1090,Product matches description. Very satisfied.,4.9,2602,0,Sports,0.01,7,2024-11-10 08:57:47.357472,0.88,0.12
+S1091,Great product and fast delivery.,4.5,3645,0,Home & Kitchen,0.01,10,2023-10-15 08:57:47.357472,0.9,0.1
+S1092,"Cheap product, not worth the money.",1.4,18,1,Beauty,0.2,45,2024-01-02 08:57:47.357472,0.59,0.41
+S1093,Good price and excellent quality.,4.0,2719,0,Automotive,0.04,5,2024-04-22 08:57:47.357472,0.98,0.02
+S1094,Excellent service and genuine item.,4.1,2758,0,Books,0.02,9,2023-11-19 08:57:47.357472,0.95,0.05
+S1095,Very bad experience. Stay away!,1.5,160,1,Automotive,0.2,70,2024-01-22 08:57:47.357472,0.36,0.64
+S1096,Product matches description. Very satisfied.,4.1,1263,0,Home & Kitchen,0.09,7,2023-06-05 08:57:47.357472,0.99,0.01
+S1097,Superb service and quality product.,4.5,3956,0,Sports,0.06,3,2023-07-06 08:57:47.357472,0.97,0.03
+S1098,Misleading description. Waste of money.,2.5,94,1,Electronics,0.25,47,2024-12-09 08:57:47.357472,0.32,0.68
+S1099,Superb service and quality product.,4.1,1975,0,Fashion,0.03,3,2024-05-31 08:57:47.357472,0.96,0.04
+S1100,"Cheap product, not worth the money.",2.1,133,1,Automotive,0.48,53,2023-11-06 08:57:47.357472,0.56,0.44
+S1101,Good price and excellent quality.,4.1,2344,0,Sports,0.03,8,2024-10-18 08:57:47.357472,0.96,0.04
+S1102,Superb service and quality product.,4.0,1242,0,Sports,0.05,9,2024-05-05 08:57:47.357472,0.88,0.12
+S1103,Highly recommended seller!,4.3,3733,0,Toys,0.1,12,2023-08-22 08:57:47.357472,0.9,0.1
+S1104,Very bad experience. Stay away!,1.8,176,1,Books,0.42,59,2023-12-10 08:57:47.357472,0.39,0.61
+S1105,Superb service and quality product.,4.0,3902,0,Fashion,0.07,6,2023-07-17 08:57:47.357472,0.95,0.05
+S1106,Very professional and trustworthy.,4.2,3612,0,Automotive,0.04,10,2025-05-29 08:57:47.357472,0.99,0.01
+S1107,Very bad experience. Stay away!,2.5,65,1,Beauty,0.27,58,2024-08-16 08:57:47.357472,0.42,0.58
+S1108,Seller is unresponsive and rude.,1.9,152,1,Beauty,0.22,38,2025-02-12 08:57:47.357472,0.41,0.59
+S1109,Seller is unresponsive and rude.,1.9,85,1,Home & Kitchen,0.4,28,2025-03-14 08:57:47.357472,0.41,0.59
+S1110,Product is different from the listing.,1.3,50,1,Electronics,0.34,61,2024-12-19 08:57:47.357472,0.56,0.44
+S1111,Product matches description. Very satisfied.,4.1,2528,0,Automotive,0.08,4,2023-11-15 08:57:47.357472,0.88,0.12
+S1112,Product is different from the listing.,1.9,102,1,Toys,0.29,31,2023-11-18 08:57:47.357472,0.57,0.43
+S1113,Product arrived in perfect condition.,4.7,1424,0,Electronics,0.03,8,2024-03-22 08:57:47.357472,0.95,0.05
+S1114,Received broken item. No response from seller.,1.9,80,1,Automotive,0.4,25,2023-12-11 08:57:47.357472,0.49,0.51
+S1115,Product matches description. Very satisfied.,5.0,1919,0,Books,0.04,10,2025-05-08 08:57:47.357472,0.92,0.08
+S1116,Product is different from the listing.,1.3,57,1,Automotive,0.48,64,2024-10-12 08:57:47.357472,0.31,0.69
+S1117,Product is different from the listing.,1.1,85,1,Toys,0.39,68,2024-10-24 08:57:47.357472,0.36,0.64
+S1118,Reliable seller. Will buy again.,5.0,2764,0,Electronics,0.03,3,2025-03-17 08:57:47.357472,0.91,0.09
+S1119,Good price and excellent quality.,4.1,4264,0,Electronics,0.08,8,2024-07-06 08:57:47.357472,0.99,0.01
+S1120,Highly recommended seller!,4.5,4505,0,Books,0.09,10,2023-09-30 08:57:47.357472,0.86,0.14
+S1121,Superb service and quality product.,4.3,3785,0,Home & Kitchen,0.02,3,2023-12-23 08:57:47.357472,0.93,0.07
+S1122,Good price and excellent quality.,4.9,4973,0,Beauty,0.1,5,2025-05-03 08:57:47.357472,0.92,0.08
+S1123,Product arrived in perfect condition.,4.6,3876,0,Automotive,0.02,10,2023-10-06 08:57:47.357472,0.92,0.08
+S1124,Very professional and trustworthy.,4.8,3161,0,Fashion,0.08,8,2024-12-09 08:57:47.357472,0.87,0.13
+S1125,Superb service and quality product.,5.0,2880,0,Sports,0.06,6,2024-06-24 08:57:47.357472,0.87,0.13
+S1126,Superb service and quality product.,4.8,2299,0,Home & Kitchen,0.08,3,2023-10-01 08:57:47.357472,0.88,0.12
+S1127,Terrible quality and no refund given.,2.5,184,1,Electronics,0.37,62,2025-05-29 08:57:47.357472,0.54,0.46
+S1128,Fake product! Do not buy.,1.0,45,1,Books,0.49,61,2024-12-13 08:57:47.357472,0.33,0.67
+S1129,Very bad experience. Stay away!,2.0,136,1,Beauty,0.26,24,2023-06-24 08:57:47.357472,0.34,0.66
+S1130,Very professional and trustworthy.,4.0,3238,0,Electronics,0.09,1,2024-12-06 08:57:47.357472,0.99,0.01
+S1131,Good price and excellent quality.,4.4,2823,0,Toys,0.05,8,2023-09-14 08:57:47.357472,0.91,0.09
+S1132,Received broken item. No response from seller.,1.4,114,1,Electronics,0.26,50,2025-02-08 08:57:47.357472,0.5,0.5
+S1133,Highly recommended seller!,4.5,2485,0,Sports,0.03,7,2024-06-22 08:57:47.357472,0.9,0.1
+S1134,"Cheap product, not worth the money.",2.4,85,1,Fashion,0.26,71,2024-08-09 08:57:47.357472,0.57,0.43
+S1135,Product arrived in perfect condition.,4.7,1371,0,Toys,0.06,10,2023-11-26 08:57:47.357472,0.91,0.09
+S1136,Seller is unresponsive and rude.,1.6,150,1,Sports,0.44,52,2024-08-11 08:57:47.357472,0.6,0.4
+S1137,Very professional and trustworthy.,4.0,1359,0,Fashion,0.07,2,2023-09-26 08:57:47.357472,0.88,0.12
+S1138,Very professional and trustworthy.,4.7,3967,0,Automotive,0.01,7,2024-01-11 08:57:47.357472,0.93,0.07
+S1139,Good price and excellent quality.,4.9,3542,0,Beauty,0.09,6,2023-09-25 08:57:47.357472,0.91,0.09
+S1140,Late delivery and poor packaging.,1.3,57,1,Books,0.4,41,2024-05-08 08:57:47.357472,0.51,0.49
+S1141,Very professional and trustworthy.,4.2,1733,0,Toys,0.07,4,2024-10-20 08:57:47.357472,0.88,0.12
+S1142,Excellent service and genuine item.,4.3,1963,0,Sports,0.07,1,2023-09-18 08:57:47.357472,0.96,0.04
+S1143,Superb service and quality product.,4.8,3763,0,Sports,0.05,6,2023-11-15 08:57:47.357472,0.96,0.04
+S1144,Product is different from the listing.,1.6,93,1,Home & Kitchen,0.42,64,2024-04-13 08:57:47.357472,0.5,0.5
+S1145,Good price and excellent quality.,4.6,1063,0,Beauty,0.02,9,2024-08-31 08:57:47.357472,0.98,0.02
+S1146,Superb service and quality product.,5.0,2118,0,Beauty,0.08,2,2024-04-19 08:57:47.357472,0.92,0.08
+S1147,Very bad experience. Stay away!,1.2,108,1,Electronics,0.38,43,2024-07-05 08:57:47.357472,0.49,0.51
+S1148,Reliable seller. Will buy again.,4.5,1666,0,Automotive,0.07,8,2023-10-09 08:57:47.357472,0.99,0.01
+S1149,Product matches description. Very satisfied.,4.2,4386,0,Toys,0.04,12,2023-11-19 08:57:47.357472,0.98,0.02
